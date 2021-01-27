@@ -19,7 +19,6 @@ export const ImageViewPage = () => {
 
   return (
     <>
-      <CornerButton icon={faHome} to="/" />
       <div
         id="main-container"
         className="container-xl d-flex flex-column flex-lg-row h-100 pt-4 pb-4"
@@ -46,6 +45,7 @@ export const ImageViewPage = () => {
             <Display imgName={fileName} />
           ))}
         </Col>
+        <CornerButton icon={faHome} to="/" />
       </div>
     </>
   );

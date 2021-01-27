@@ -9,7 +9,7 @@ type CornerButtonProps = {
 };
 
 export const CornerButton = ({ icon, to }: CornerButtonProps) => (
-  <Link to={to}>
+  <Link to={to} style={{ zIndex: 9999 }}>
     <FontAwesomeIcon icon={icon} className={`${styles["corner-button"]}`} />
   </Link>
 );
