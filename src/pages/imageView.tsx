@@ -4,12 +4,10 @@ import { Display } from "../components/display";
 import { getRelevantImages } from "../utils/relevantImages";
 import { Redirect, useParams } from "react-router-dom";
 import { isFileName } from "../utils/typeCheck";
+import { CornerButton } from "../components/cornerButton";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 
-type ImageViewPageProps = {
-  fileName: FileName;
-};
-
-export const ImageViewPage = ({}: ImageViewPageProps) => {
+export const ImageViewPage = () => {
   const { fileName } = useParams<{ fileName: string }>();
 
   if (!isFileName(fileName))
@@ -20,6 +18,8 @@ export const ImageViewPage = ({}: ImageViewPageProps) => {
   const relevantImages = getRelevantImages(fileName);
 
   return (
+    <>
+      <CornerButton icon={faHome} to="/" />
     <div
       id="main-container"
       className="container-xl d-flex flex-column flex-lg-row h-100 pt-4 pb-4"
