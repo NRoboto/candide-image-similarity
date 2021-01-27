@@ -1,5 +1,4 @@
 import { Col } from "reactstrap";
-import type { FileName } from "../utils/types";
 import { Display } from "../components/display";
 import { getRelevantImages } from "../utils/relevantImages";
 import { Redirect, useParams } from "react-router-dom";
@@ -34,7 +33,7 @@ export const ImageViewPage = () => {
         <h4 className="mt-4 d-lg-none">Similar Images</h4>
         <Col lg="3" className="d-flex flex-column justify-content-around">
           {relevantImages.slice(1, 4).map((fileName) => (
-            <Display imgName={fileName} />
+            <Display imgName={fileName} key={fileName} />
           ))}
         </Col>
         <Col
@@ -42,7 +41,7 @@ export const ImageViewPage = () => {
           className="order-2 d-flex flex-column justify-content-around"
         >
           {relevantImages.slice(5, 8).map((fileName) => (
-            <Display imgName={fileName} />
+            <Display imgName={fileName} key={fileName} />
           ))}
         </Col>
         <CornerButton icon={faHome} to="/" />
