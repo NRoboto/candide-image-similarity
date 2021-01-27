@@ -44,11 +44,11 @@ const LargeDisplay = ({ imgName }: DisplayProps) => (
       <CardTitle tag="h3">{fileDescriptions["1.jpg"].title}</CardTitle>
       <hr />
       <CardText>
-        Tags: {fileDescriptions["1.jpg"].description ?? "Description goes here"}
+        {fileDescriptions["1.jpg"].description ?? "Description goes here"}
       </CardText>
       <hr />
       <CardSubtitle className="text-muted">
-        {fileDescriptions["1.jpg"].tags.join(", ")}
+        Tags: {fileDescriptions["1.jpg"].tags.join(", ")}
       </CardSubtitle>
     </CardBody>
   </Card>
