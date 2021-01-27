@@ -1,8 +1,7 @@
 import fileDescriptions from "../data/fileDescriptions.json";
 import tagScores from "../data/tagScores.json";
 
-type FileName = keyof typeof fileDescriptions;
-type TagName = keyof typeof tagScores;
+import type { FileName, TagName } from "./types";
 
 /**
  * Gets images relevant to a given image
