@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import {
   Card,
@@ -46,9 +47,7 @@ export const Display = ({ imgName, expanded, to }: DisplayProps) => {
               Tags: {description.tags.join(", ")}
             </CardSubtitle>
           </>
-        ) : (
-          ""
-        )}
+        ) : null}
       </CardBody>
     </Card>
   );

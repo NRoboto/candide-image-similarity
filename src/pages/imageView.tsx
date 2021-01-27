@@ -20,28 +20,33 @@ export const ImageViewPage = () => {
   return (
     <>
       <CornerButton icon={faHome} to="/" />
-    <div
-      id="main-container"
-      className="container-xl d-flex flex-column flex-lg-row h-100 pt-4 pb-4"
-    >
-      <Col
-        xs="12"
-        lg="6"
-        className="order-lg-1 d-flex flex-column justify-content-around"
+      <div
+        id="main-container"
+        className="container-xl d-flex flex-column flex-lg-row h-100 pt-4 pb-4"
       >
-        <Display imgName={fileName} expanded />
-      </Col>
-      <h4 className="mt-4 d-lg-none">Similar Images</h4>
-      <Col lg="3" className="d-flex flex-column justify-content-around">
-        {relevantImages.slice(1, 4).map((fileName) => (
-          <Display imgName={fileName} />
-        ))}
-      </Col>
-      <Col lg="3" className="order-2 d-flex flex-column justify-content-around">
-        {relevantImages.slice(5, 8).map((fileName) => (
-          <Display imgName={fileName} />
-        ))}
-      </Col>
-    </div>
+        <Col
+          xs="12"
+          lg="6"
+          className="order-lg-1 d-flex flex-column justify-content-around"
+        >
+          <Display imgName={fileName} expanded to={`/view/${fileName}`} />
+        </Col>
+
+        <h4 className="mt-4 d-lg-none">Similar Images</h4>
+        <Col lg="3" className="d-flex flex-column justify-content-around">
+          {relevantImages.slice(1, 4).map((fileName) => (
+            <Display imgName={fileName} />
+          ))}
+        </Col>
+        <Col
+          lg="3"
+          className="order-2 d-flex flex-column justify-content-around"
+        >
+          {relevantImages.slice(5, 8).map((fileName) => (
+            <Display imgName={fileName} />
+          ))}
+        </Col>
+      </div>
+    </>
   );
 };

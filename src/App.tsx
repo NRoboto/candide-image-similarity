@@ -3,6 +3,7 @@ import { HomePage } from "./pages/home";
 
 import { ImageViewPage } from "./pages/imageView";
 import { NotFoundPage } from "./pages/notFound";
+import { SoloImagePage } from "./pages/soloImage";
 
 const App = () => (
   <Switch>
@@ -10,7 +11,10 @@ const App = () => (
       <HomePage />
     </Route>
     <Route path="/image/:fileName">
-      <ImageViewPage fileName="1.jpg" />
+      <ImageViewPage />
+    </Route>
+    <Route path="/view/:fileName">
+      <SoloImagePage />
     </Route>
     <Route path="*">
       <NotFoundPage />
