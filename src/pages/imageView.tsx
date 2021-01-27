@@ -2,12 +2,21 @@ import { Col } from "reactstrap";
 import type { FileName } from "../utils/types";
 import { Display } from "../components/display";
 import { getRelevantImages } from "../utils/relevantImages";
+import { Redirect, useParams } from "react-router-dom";
+import { isFileName } from "../utils/typeCheck";
 
 type ImageViewPageProps = {
   fileName: FileName;
 };
 
-export const ImageViewPage = ({ fileName }: ImageViewPageProps) => {
+export const ImageViewPage = ({}: ImageViewPageProps) => {
+  const { fileName } = useParams<{ fileName: string }>();
+
+  if (!isFileName(fileName))
+    return (
+      <Redirect to={{ pathname: "/404", search: `?filename=${fileName}` }} />
+    );
+
   const relevantImages = getRelevantImages(fileName);
 
   return (

@@ -1,3 +1,4 @@
+import { Route, Switch } from "react-router-dom";
 import {
   Card,
   CardImg,
@@ -10,11 +11,23 @@ import {
 } from "reactstrap";
 import "../node_modules/bootswatch/dist/pulse/bootstrap.min.css";
 import "./App.css";
+import { HomePage } from "./pages/home";
 
 import { ImageViewPage } from "./pages/imageView";
+import { NotFoundPage } from "./pages/notFound";
 
-function App() {
-  return <ImageViewPage fileName="1.jpg" />;
-}
+const App = () => (
+  <Switch>
+    <Route path="/" exact>
+      <HomePage />
+    </Route>
+    <Route path="/image/:fileName">
+      <ImageViewPage fileName="1.jpg" />
+    </Route>
+    <Route path="*">
+      <NotFoundPage />
+    </Route>
+  </Switch>
+);
 
 export default App;
