@@ -1,16 +1,4 @@
 import { Route, Switch } from "react-router-dom";
-import {
-  Card,
-  CardImg,
-  CardBody,
-  CardTitle,
-  CardText,
-  Col,
-  Container,
-  CardSubtitle,
-} from "reactstrap";
-import "../node_modules/bootswatch/dist/pulse/bootstrap.min.css";
-import "./App.css";
 import { HomePage } from "./pages/home";
 
 import { ImageViewPage } from "./pages/imageView";
