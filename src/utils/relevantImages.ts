@@ -34,5 +34,5 @@ export const getRelevantImages = (name: FileName, count: number = 10) => {
   return Object.entries(relevanceScores)
     .sort((a, b) => (b[1] ?? -1) - (a[1] ?? -1))
     .map(([name]) => name)
-    .slice(0, count);
+    .slice(0, count) as FileName[];
 };
