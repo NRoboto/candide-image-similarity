@@ -1,6 +1,6 @@
 # Candide Image Similarity Algorithm
 
-This is an algorithm for finding similar images using data from the Google Cloud Vision API, along with a React frontend. A live version is available [here](#).
+This is an algorithm for finding similar images using data from the Google Cloud Vision API, along with a React frontend. A live version is available [here](https://nroboto-candide-image-sim.herokuapp.com/).
 
 For each image, similar images are shown on either side (or in a column below on mobile devices). Clicking a similar image navigates to that image's page, clicking the center image makes it go fullscreen.
 
