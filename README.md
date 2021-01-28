@@ -28,6 +28,8 @@ Two files will be produced: `fileDescriptions.json` and `tagScores.json`
 
 ## Explanation
 
+The image similarity algorithm can be found in `src/utils/relevantImages.ts`.
+
 ### Structure
 
 The Google Cloud Vision API data is restructured into two files
