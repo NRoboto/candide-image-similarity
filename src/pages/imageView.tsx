@@ -5,6 +5,9 @@ import { Redirect, useParams } from "react-router-dom";
 import { isFileName } from "../utils/typeCheck";
 import { CornerButton } from "../components/cornerButton";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { FileName } from "../utils/types";
+
+const relevantImagesMemo: { [K in FileName]?: FileName[] } = {};
 
 export const ImageViewPage = () => {
   const { fileName } = useParams<{ fileName: string }>();
@@ -14,7 +17,10 @@ export const ImageViewPage = () => {
       <Redirect to={{ pathname: "/404", search: `?filename=${fileName}` }} />
     );
 
-  const relevantImages = getRelevantImages(fileName);
+  // Can't use react's useMemo hook because of possible early return
+  const relevantImages =
+    relevantImagesMemo[fileName] ??
+    (relevantImagesMemo[fileName] = getRelevantImages(fileName));
 
   return (
     <>
