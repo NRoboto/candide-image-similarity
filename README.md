@@ -24,7 +24,7 @@ To generate the correctly formated files, place the Google Cloud Vision API data
 node genDataFiles.js filename.json
 ```
 
-Two files will be produces: `fileDescriptions.json` and `tagScores.json`
+Two files will be produced: `fileDescriptions.json` and `tagScores.json`
 
 ## Explanation
 
@@ -72,11 +72,11 @@ This file maps each tag to the images that the tag applies to, along with their 
 
 ### Getting relevant images
 
-To get relevant images for the current image, each tag applied to the current image is used to find other images with the same tag. Each of these other images then has their score for the tag multiplied by the current images score for that same tag. The sum of these values for each image are then taken as the measure of how relevant the image is to the current image.
+To get relevant images for the current image, each tag applied to the current image is used to find other images with the same tag. Each of these other images then has their score for the tag multiplied by the current image's score for that same tag. The sum of these values for each image is then taken as the measure of how relevant the image is to the current image.
 
 The scores are multiplied so that both the tag's relevance to the current image, and the tag's relevance to the other image, are both taken into account. If the tag isn't very relevant to one (or both) of the images, then it doesn't tell much about how similar the images are.
 
-The scores are summed so that, in general, images that share many tag will be more relevant than images which share fewer tags.
+The scores are summed so that, in general, images that share many tags will be more relevant than images which share fewer tags.
 
 #### Example
 

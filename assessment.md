@@ -13,7 +13,7 @@ Adding an image involves taking the API data and using the `genDataFiles.js` scr
 
 ## Alternate Structure
 
-An alternate approach to structuring this data would be to only use `fileDescriptions.json` and storing the scores for each tag with the tag e.g.
+An alternate approach to structuring this data would be to only use `fileDescriptions.json` and store the scores for each tag along with the tag e.g.
 
 ```json
 {
