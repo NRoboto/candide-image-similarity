@@ -44,7 +44,12 @@ export const Display = ({ imgName, expanded, to }: DisplayProps) => {
             </CardText>
             <hr />
             <CardSubtitle className="text-muted">
-              Tags: {description.tags.join(", ")}
+              Tags:{" "}
+              {description.tags.map((tag) => (
+                <>
+                  <Link to={`/tags/${tag}`}>{tag}</Link>,{" "}
+                </>
+              ))}
             </CardSubtitle>
           </>
         ) : null}
