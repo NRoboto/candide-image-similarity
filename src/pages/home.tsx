@@ -11,11 +11,9 @@ export const HomePage = () => {
     <>
       <h1 className="text-center mt-2">Images</h1>
       <hr />
-      <div className="container-lg d-flex mt-4">
-        <TwoCol elements={fileNames}>
-          {({ value, key }) => <Display imgName={value} key={key} />}
-        </TwoCol>
-      </div>
+      <TwoCol elements={fileNames}>
+        {({ value, key }) => <Display imgName={value} key={key} />}
+      </TwoCol>
     </>
   );
 };

@@ -15,7 +15,7 @@ export const TwoCol = <T,>({
   elements,
   children: Component,
 }: TwoColProps<T>) => (
-  <>
+  <div className="container-lg d-flex mt-4">
     <Col xs="12" md="6">
       {elements
         .filter((_x, i) => i % 2 === 0)
@@ -30,5 +30,5 @@ export const TwoCol = <T,>({
           <Component value={name} key={i} />
         ))}
     </Col>
-  </>
+  </div>
 );
