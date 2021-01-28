@@ -21,13 +21,14 @@ export const getRelevantImages = (name: FileName, count: number = 10) => {
     if (!currScore)
       throw new Error("Invalid data files, regenerate with genDataFiles.js");
 
-    return tagScores[tag].reduce((scores, imgScore) => {
-      return {
+    return tagScores[tag].reduce(
+      (scores, imgScore) => ({
         ...scores,
         [imgScore.name]:
           (scores[imgScore.name as FileName] ?? 0) + imgScore.score * currScore,
-      };
-    }, scores);
+      }),
+      scores
+    );
   }, {} as { [K in FileName]?: number });
 
   return Object.entries(relevanceScores)
