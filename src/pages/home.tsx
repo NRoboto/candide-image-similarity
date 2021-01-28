@@ -1,5 +1,5 @@
-import { Col } from "reactstrap";
 import { Display } from "../components/display";
+import { Heading } from "../components/heading";
 import { TwoCol } from "../components/twoCol";
 import fileDescriptions from "../data/fileDescriptions.json";
 import type { FileName } from "../utils/types";
@@ -9,8 +9,7 @@ export const HomePage = () => {
 
   return (
     <>
-      <h1 className="text-center mt-2">Images</h1>
-      <hr />
+      <Heading title="Images" linkText="Tags" linkTo="/tags" />
       <TwoCol elements={fileNames}>
         {({ value, key }) => <Display imgName={value} key={key} />}
       </TwoCol>
