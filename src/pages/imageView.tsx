@@ -20,7 +20,7 @@ export const ImageViewPage = () => {
   // Can't use react's useMemo hook because of possible early return
   const relevantImages =
     relevantImagesMemo[fileName] ??
-    (relevantImagesMemo[fileName] = getRelevantImages(fileName));
+    (relevantImagesMemo[fileName] = getRelevantImages(fileName, 6));
 
   return (
     <>
@@ -38,7 +38,7 @@ export const ImageViewPage = () => {
 
         <h4 className="mt-4 d-lg-none">Similar Images</h4>
         <Col lg="3" className="d-flex flex-column justify-content-around">
-          {relevantImages.slice(1, 4).map((fileName) => (
+          {relevantImages.slice(0, 3).map((fileName) => (
             <Display imgName={fileName} key={fileName} />
           ))}
         </Col>
@@ -46,7 +46,7 @@ export const ImageViewPage = () => {
           lg="3"
           className="order-2 d-flex flex-column justify-content-around"
         >
-          {relevantImages.slice(5, 8).map((fileName) => (
+          {relevantImages.slice(3, 6).map((fileName) => (
             <Display imgName={fileName} key={fileName} />
           ))}
         </Col>
